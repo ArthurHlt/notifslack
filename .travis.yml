@@ -6,7 +6,7 @@ install:
 script:
 - echo ""
 after_success:
-- bin/build-all.sh
+- bin/build_all.sh
 deploy:
   provider: releases
   api_key:
