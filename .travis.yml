@@ -17,7 +17,6 @@ deploy:
   - out/notifslack_linux_amd64
   - out/notifslack_windows_386.exe
   - out/notifslack_windows_amd64.exe
-  - repo-index.yml
   on:
     tags: true
     all_branches: true
