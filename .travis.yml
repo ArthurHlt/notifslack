@@ -1,0 +1,23 @@
+language: go
+go:
+- 1.6.2
+install:
+- go get -v -d ./...
+script:
+- echo ""
+after_success:
+- bin/build-all.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: WAn6/tm9u5S06WE00SepmsNAPnVJboQAIbmliwc1xn4iELUB6dScpjC3t+Fky0Um1GYTCj5g/MGJE2FnQapaVPefyMJNFsV0qUmyHFYhuHPzoHwcd0rKtnNYmjrarzCqHBKayOtFpHdYketOHRNgyVjU0CGpd0+ptqC/K2TbkX65pTu70TbOkPwhh+7a0g8nsXe5MGot0u/tOKnADKfiMESbLxBmS/vbqg6XA3y+z8PGcA+C4Ht9dumzhWpCdLvwAAsPjqtudXzpqbUkxfMqIlsX632na+5oN7nYiKieYeVDm8kNJrTTyd0I8xmrRCfNZs/EBuSMoioyjNDi4xex76AUHypbALKUZbyQrS8COVw88uiiHn2JjZyEVG6dqrI63RltfXA1Y2AInTVLhFgtxtPPMHsnt+QzOB5cFMQ/BpwlgIh0yomTBlVr19S+Ec6+iPFdDPHkzsyhb2It5nC3dNAiK0vPFomh/DYsyKPM1BiP7kKzcpalCrkWyUp8fttac7A4a1SQqBEjL4E2VUZp6H91lILLVdaYgNI8+lADbFxb0npR8668ApUfjVFsUhGhAA3R7Kt3L8WbEQSyJm2AxVAAsJr6CSdNMOLMYZ6bc+v79SEcVs/IdZ2U+Kx+p0SeTj1GdU+RrWBwoUgvDIP4KmhQkrqAOQPwZTW6Owh3auA=
+  file:
+  - out/notifslack_darwin_amd64
+  - out/notifslack_linux_386
+  - out/notifslack_linux_amd64
+  - out/notifslack_windows_386.exe
+  - out/notifslack_windows_amd64.exe
+  - repo-index.yml
+  on:
+    tags: true
+    all_branches: true

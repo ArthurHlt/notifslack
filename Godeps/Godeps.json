@@ -1,0 +1,12 @@
+{
+	"ImportPath": "github.com/ArthurHlt/notifslack",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v62",
+	"Deps": [
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "v1.16.0-15-g75b97d0",
+			"Rev": "75b97d09d9f5792ff997e249a330a3ca28f8b537"
+		}
+	]
+}
