@@ -26,16 +26,16 @@ func main() {
 	app.UsageText = "notifslack --url https://hooks.slack.com/services/XXXX [global options] \"my text to send\""
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name: "channel, c",
-			Destination: &channel,
-			Value: "",
-			Usage: "Optional. Override channel to send message to. #channel and @user forms are allowed.",
-		},
-		cli.StringFlag{
 			Name: "url",
 			Destination: &url,
 			Value: "",
 			Usage: "Required. The webhook URL as provided by Slack. Usually in the form: https://hooks.slack.com/services/XXXX",
+		},
+		cli.StringFlag{
+			Name: "channel, c",
+			Destination: &channel,
+			Value: "",
+			Usage: "Optional. Override channel to send message to. #channel and @user forms are allowed.",
 		},
 		cli.StringFlag{
 			Name: "username, u",
