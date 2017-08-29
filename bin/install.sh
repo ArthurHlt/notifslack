@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-VERSION="1.0.0"
 NAME="notifslack"
 OS=""
 OWNER="ArthurHlt"
@@ -7,7 +6,7 @@ OWNER="ArthurHlt"
 cd -- "${TMPDIR:?NO TEMP DIRECTORY FOUND!}" || exit
 cd -
 echo "Installing ${NAME}..."
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ "$OSTYPE" == "linux-gnu" || "$(uname -s)" == "Linux" ]]; then
     OS="linux"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     OS="darwin"
@@ -21,7 +20,7 @@ else
     echo "Os not supported by install script"
     exit 1
 fi
-
+VERSION=$(curl -s https://api.github.com/repos/${OWNER}/${REPO_NAME}/releases/latest | grep tag_name | head -n 1 | cut -d '"' -f 4)
 ARCHNUM=`getconf LONG_BIT`
 ARCH=""
 CPUINFO=`uname -m`
@@ -37,7 +36,7 @@ FILENAME="${NAME}_${OS}_${ARCH}"
 if [[ "$OS" == "windows" ]]; then
     FILENAME="${FILENAME}.exe"
 fi
-LINK="https://github.com/${OWNER}/${NAME}/releases/download/v${VERSION}/${FILENAME}"
+LINK="https://github.com/${OWNER}/${NAME}/releases/download/${VERSION}/${FILENAME}"
 if [[ "$OS" == "windows" ]]; then
     FILEOUTPUT="${FILENAME}"
 else
