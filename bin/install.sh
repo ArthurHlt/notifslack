@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 NAME="notifslack"
+REPO_NAME="notifslack"
 OS=""
 OWNER="ArthurHlt"
 : "${TMPDIR:=${TMP:-$(CDPATH=/var:/; cd -P tmp)}}"
