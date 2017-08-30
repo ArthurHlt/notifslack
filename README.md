@@ -43,15 +43,18 @@ USAGE:
    notifslack --url https://hooks.slack.com/services/XXXX [global options] "my text to send"
 
 VERSION:
-   1.0.0
+   1.1.0
 
 COMMANDS:
+     help, h  Shows a list of commands or help for one command
+
 GLOBAL OPTIONS:
-   --url value			        Required. The webhook URL as provided by Slack. Usually in the form: https://hooks.slack.com/services/XXXX
-   --channel value, -c value	Optional. Override channel to send message to. #channel and @user forms are allowed.
-   --username value, -u value	Optional. Override name of the sender of the message.
-   --icon-url value, -i value	Optional. Override icon by providing URL to the image.
-   --icon-emoji value, -e value	Optional. Override icon by providing emoji code (e.g. :ghost:).
-   --help, -h			show help
-   --version, -v		print the version
+   --url value                   Required. The webhook URL as provided by Slack. Usually in the form: https://hooks.slack.com/services/XXXX
+   --channel value, -c value     Optional. Override channel to send message to. #channel and @user forms are allowed.
+   --username value, -u value    Optional. Override name of the sender of the message.
+   --icon-url value, -i value    Optional. Override icon by providing URL to the image.
+   --icon-emoji value, -e value  Optional. Override icon by providing emoji code (e.g. :ghost:).
+   --insecure, -k                Ignore certificate validation
+   --help, -h                    show help
+   --version, -v                 print the version
 ```
