@@ -6,16 +6,17 @@ script:
 after_success:
 - bin/build_all
 deploy:
-  skip_cleanup: true
   provider: releases
   api_key:
-    secure: WAn6/tm9u5S06WE00SepmsNAPnVJboQAIbmliwc1xn4iELUB6dScpjC3t+Fky0Um1GYTCj5g/MGJE2FnQapaVPefyMJNFsV0qUmyHFYhuHPzoHwcd0rKtnNYmjrarzCqHBKayOtFpHdYketOHRNgyVjU0CGpd0+ptqC/K2TbkX65pTu70TbOkPwhh+7a0g8nsXe5MGot0u/tOKnADKfiMESbLxBmS/vbqg6XA3y+z8PGcA+C4Ht9dumzhWpCdLvwAAsPjqtudXzpqbUkxfMqIlsX632na+5oN7nYiKieYeVDm8kNJrTTyd0I8xmrRCfNZs/EBuSMoioyjNDi4xex76AUHypbALKUZbyQrS8COVw88uiiHn2JjZyEVG6dqrI63RltfXA1Y2AInTVLhFgtxtPPMHsnt+QzOB5cFMQ/BpwlgIh0yomTBlVr19S+Ec6+iPFdDPHkzsyhb2It5nC3dNAiK0vPFomh/DYsyKPM1BiP7kKzcpalCrkWyUp8fttac7A4a1SQqBEjL4E2VUZp6H91lILLVdaYgNI8+lADbFxb0npR8668ApUfjVFsUhGhAA3R7Kt3L8WbEQSyJm2AxVAAsJr6CSdNMOLMYZ6bc+v79SEcVs/IdZ2U+Kx+p0SeTj1GdU+RrWBwoUgvDIP4KmhQkrqAOQPwZTW6Owh3auA=
+    secure: slu+l5tcVN+1EDgr6IA2sZC/NACAKAjRQ+BjdXKxIJU7iE1xRWd4YNnZYFdIgZSmnJ4cjUKgXZ/p1zdy6E/b62ZmMyg7hQl01koW2K4m8+jClbXQLQGOI3dLcVYeJdYFEho6x0gLTkfut0TIlI1CFmPWPbi6cU0mVFB2j6oSHPHf4rWH+k2UsGI8UYlxBIlTI3qb5edskkuRhw23bLZdSmK1rRrlbwHnXMHedZV77Mjr0k2Pu47gD+QQGREUKzU1FLL/CVO6Zbm4FWCaqxW5n6K+xvsuO1mgGz5K0+s8VrobXj+XKuKjq/OTMNTCnSDIK0ayHQJnwTp1PlvWftGlUHPM2Phu4XDfAvrU53hdpNzv9cAmhdHlcdLXH3Dq1mjzqO/d2vgpU80WG0HkfNHWWqaWJ64dOkOGhUdxMUOUyz2HVlnp8KqIKzoNJie5piPJSxiHQYUmFqSsRKq8v8y2jwDv+P18MC9W1EVK94uDqZXajqD+9zF5MBVi0vbCw5wQRbXAocmU7paLhCE2Q/C33k0rJiKGB9830p+OMXDH8lI/XIYFAXQS4MM2IMLjeWg2Mps/fpuYPxsf1tw+Y1EausqylyJtaD6Q2HS26dRs901Q7C0aQxvHnp0SN3XnQsMS/2G0SaEQSTp0v3DmyO0/SO0BlRTipA8P1hkjgfaCWuk=
   file:
   - out/notifslack_darwin_amd64
   - out/notifslack_linux_386
   - out/notifslack_linux_amd64
   - out/notifslack_windows_386.exe
   - out/notifslack_windows_amd64.exe
+  skip_cleanup: true
   on:
     tags: true
     all_branches: true
+
